@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pentagon Wealth — Website Sitemap</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2340;
+    --navy-light: #243057;
+    --cream: #f5f0eb;
+    --warm: #b08d72;
+    --warm-light: #c9a98a;
+    --warm-pale: #e8ddd4;
+    --white: #ffffff;
+    --text-dark: #1a2340;
+    --text-mid: #4a5568;
+    --border: #d6cdc5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    min-height: 100vh;
+    padding: 60px 40px 80px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 64px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo-mark {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .header-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 0.04em;
+    color: var(--navy);
+  }
+
+  .header-text p {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-top: 3px;
+  }
+
+  .doc-label {
+    margin-left: auto;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    font-weight: 400;
+  }
+
+  /* Nav bar preview */
+  .nav-preview {
+    background: var(--navy);
+    border-radius: 4px;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 56px;
+    overflow: hidden;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+  }
+
+  .nav-logo span {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--cream);
+    letter-spacing: 0.08em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links li {
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: rgba(245,240,235,0.75);
+    cursor: default;
+    transition: color 0.2s;
+  }
+
+  .nav-links li.active {
+    color: var(--warm-light);
+    border-bottom: 1px solid var(--warm-light);
+    padding-bottom: 2px;
+  }
+
+  .nav-cta {
+    margin-left: 36px;
+    background: var(--warm);
+    color: var(--white);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 9px 20px;
+    font-weight: 500;
+    font-family: 'Jost', sans-serif;
+    border: none;
+    cursor: default;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+
+  /* Sitemap tree */
+  .sitemap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 64px;
+  }
+
+  /* Root node */
+  .root-node {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 18px 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    border-bottom: 3px solid var(--warm);
+  }
+
+  .root-node::after {
+    content: '';
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 28px;
+    background: var(--warm);
+  }
+
+  /* Horizontal connector */
+  .h-connector {
+    height: 1px;
+    background: var(--warm);
+    width: 78%;
+    position: relative;
+    margin-top: 0;
+  }
+
+  /* Vertical stubs above main pages */
+  .pages-row {
+    display: flex;
+    gap: 0;
+    width: 78%;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .page-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+  }
+
+  .page-col::before {
+    content: '';
+    width: 1px;
+    height: 28px;
+    background: var(--warm);
+    display: block;
+  }
+
+  /* Page node */
+  .page-node {
+    background: var(--white);
+    border: 1.5px solid var(--navy);
+    padding: 13px 20px;
+    width: 100%;
+    max-width: 155px;
+    text-align: center;
+    position: relative;
+  }
+
+  .page-node .page-icon {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 7px;
+    color: var(--warm);
+  }
+
+  .page-node .page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 0.03em;
+    display: block;
+  }
+
+  .page-node.highlight {
+    border-color: var(--warm);
+    background: var(--warm-pale);
+  }
+
+  .page-node.highlight .page-title {
+    color: var(--navy);
+  }
+
+  /* Sub pages */
+  .sub-connector {
+    width: 1px;
+    height: 22px;
+    background: var(--border);
+    margin: 0 auto;
+  }
+
+  .sub-h-connector {
+    height: 1px;
+    background: var(--border);
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .sub-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 155px;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .sub-node {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 145px;
+    text-align: center;
+    margin-bottom: 8px;
+    position: relative;
+  }
+
+  .sub-node::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 8px;
+    background: var(--border);
+  }
+
+  .sub-node .sub-title {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .sub-node .sub-desc {
+    font-size: 9.5px;
+    color: var(--warm);
+    margin-top: 3px;
+    display: block;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+
+  /* Pentagon shape accent */
+  .pentagon-accent {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  /* Colour palette reference */
+  .palette-section {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 56px;
+    flex-wrap: wrap;
+  }
+
+  .swatch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .swatch-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+
+  .swatch-info .swatch-name {
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    display: block;
+  }
+
+  .swatch-info .swatch-hex {
+    font-size: 10px;
+    color: var(--text-mid);
+    display: block;
+    margin-top: 1px;
+    font-weight: 300;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* Typography / style notes */
+  .style-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .style-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 24px 22px;
+  }
+
+  .style-card .card-label {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--warm);
+    margin-bottom: 14px;
+    display: block;
+    font-weight: 500;
+  }
+
+  .style-card .card-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+
+  .style-card .card-body {
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .style-card .card-cta {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    border-bottom: 1px solid var(--warm);
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+
+  /* Page detail table */
+  .page-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 56px;
+    font-size: 12.5px;
+  }
+
+  .page-table thead tr {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  .page-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .page-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .page-table tbody tr:nth-child(even) {
+    background: var(--cream);
+  }
+
+  .page-table tbody td {
+    padding: 14px 20px;
+    color: var(--text-mid);
+    vertical-align: top;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .page-table tbody td:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-bottom: 3px;
+  }
+
+  .tag-primary { background: var(--navy); color: var(--cream); }
+  .tag-warm { background: var(--warm-pale); color: var(--warm); border: 1px solid var(--warm-light); }
+  .tag-light { background: var(--cream); color: var(--text-mid); border: 1px solid var(--border); }
+
+  /* Footer */
+  .footer {
+    margin-top: 64px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer p {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-mid);
+    font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <!-- Pentagon logo SVG -->
+  <svg class="logo-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+      <!-- Multiple rotated rounded pentagons as in the logo -->
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1.1" stroke-linejoin="round" opacity="0.9"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1" stroke-linejoin="round" opacity="0.7" transform="rotate(8 26 26)"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1" stroke-linejoin="round" opacity="0.55" transform="rotate(16 26 26)"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="0.9" stroke-linejoin="round" opacity="0.4" transform="rotate(24 26 26)"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="0.8" stroke-linejoin="round" opacity="0.25" transform="rotate(32 26 26)"/>
+    </g>
+  </svg>
+  <div class="header-text">
+    <h1>Pentagon Wealth</h1>
+    <p>Website Sitemap & Style Reference</p>
+  </div>
+  <div class="doc-label">Brand Document · 2026</div>
+</div>
+
+<!-- Nav Bar Preview -->
+<p class="section-title">Navigation Preview</p>
+<div class="nav-preview">
+  <div class="nav-logo">
+    <svg width="26" height="26" viewBox="0 0 52 52" fill="none">
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1.5" stroke-linejoin="round"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1.2" stroke-linejoin="round" transform="rotate(12 26 26)" opacity="0.6"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="0.9" stroke-linejoin="round" transform="rotate(24 26 26)" opacity="0.35"/>
+    </svg>
+    <span>Pentagon Wealth</span>
+  </div>
+  <ul class="nav-links">
+    <li class="active">Home</li>
+    <li>About Us</li>
+    <li>Services</li>
+    <li>Insights</li>
+    <li>Contact Us</li>
+  </ul>
+  <button class="nav-cta">Get in Touch</button>
+</div>
+
+<!-- Sitemap Tree -->
+<p class="section-title">Site Structure</p>
+<div class="sitemap-container">
+
+  <!-- Root -->
+  <div class="root-node">
+    <svg width="22" height="22" viewBox="0 0 52 52" fill="none">
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#c9a98a" stroke-width="1.8" stroke-linejoin="round"/>
+      <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#c9a98a" stroke-width="1.2" stroke-linejoin="round" transform="rotate(14 26 26)" opacity="0.55"/>
+    </svg>
+    Pentagon Wealth
+  </div>
+
+  <!-- Vertical line then horizontal bar -->
+  <div style="width:1px;height:28px;background:var(--warm);"></div>
+  <div class="h-connector"></div>
+
+  <!-- Main pages row -->
+  <div class="pages-row">
+
+    <!-- Home -->
+    <div class="page-col">
+      <div class="page-node highlight">
+        <span class="page-icon">⬠</span>
+        <span class="page-title">Home</span>
+      </div>
+      <div class="sub-connector"></div>
+      <div class="sub-row">
+        <div class="sub-node"><span class="sub-title">Hero Banner</span><span class="sub-desc">Headline + CTA</span></div>
+        <div class="sub-node"><span class="sub-title">Services Intro</span><span class="sub-desc">5 pillars overview</span></div>
+        <div class="sub-node"><span class="sub-title">Why Pentagon</span><span class="sub-desc">Values + ethos</span></div>
+        <div class="sub-node"><span class="sub-title">Contact CTA</span><span class="sub-desc">Footer prompt</span></div>
+      </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="page-col">
+      <div class="page-node">
+        <span class="page-icon">◈</span>
+        <span class="page-title">About Us</span>
+      </div>
+      <div class="sub-connector"></div>
+      <div class="sub-row">
+        <div class="sub-node"><span class="sub-title">Our Story</span><span class="sub-desc">Founding & mission</span></div>
+        <div class="sub-node"><span class="sub-title">Our Team</span><span class="sub-desc">Advisers & staff</span></div>
+        <div class="sub-node"><span class="sub-title">Our Values</span><span class="sub-desc">Client-first ethos</span></div>
+        <div class="sub-node"><span class="sub-title">Accreditations</span><span class="sub-desc">FCA / qualifications</span></div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="page-col">
+      <div class="page-node highlight">
+        <span class="page-icon">⬟</span>
+        <span class="page-title">Services</span>
+      </div>
+      <div class="sub-connector"></div>
+      <div class="sub-row">
+        <div class="sub-node"><span class="sub-title">IHT Planning</span><span class="sub-desc">Estate structuring</span></div>
+        <div class="sub-node"><span class="sub-title">Investments</span><span class="sub-desc">Portfolio management</span></div>
+        <div class="sub-node"><span class="sub-title">Retirement</span><span class="sub-desc">Planning & guidance</span></div>
+        <div class="sub-node"><span class="sub-title">Pension Mgmt</span><span class="sub-desc">Consolidation & advice</span></div>
+        <div class="sub-node"><span class="sub-title">Insurance</span><span class="sub-desc">Protection solutions</span></div>
+      </div>
+    </div>
+
+    <!-- Privacy Policy -->
+    <div class="page-col">
+      <div class="page-node">
+        <span class="page-icon">◇</span>
+        <span class="page-title">Privacy Policy</span>
+      </div>
+      <div class="sub-connector"></div>
+      <div class="sub-row">
+        <div class="sub-node"><span class="sub-title">Data Use</span><span class="sub-desc">GDPR / UK DPA</span></div>
+        <div class="sub-node"><span class="sub-title">Cookie Policy</span><span class="sub-desc">Consent settings</span></div>
+        <div class="sub-node"><span class="sub-title">Your Rights</span><span class="sub-desc">Access & erasure</span></div>
+      </div>
+    </div>
+
+    <!-- Contact Us -->
+    <div class="page-col">
+      <div class="page-node highlight">
+        <span class="page-icon">◎</span>
+        <span class="page-title">Contact Us</span>
+      </div>
+      <div class="sub-connector"></div>
+      <div class="sub-row">
+        <div class="sub-node"><span class="sub-title">Enquiry Form</span><span class="sub-desc">Name / email / query</span></div>
+        <div class="sub-node"><span class="sub-title">Office Details</span><span class="sub-desc">Address & phone</span></div>
+        <div class="sub-node"><span class="sub-title">Book a Call</span><span class="sub-desc">Calendly / scheduler</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- Page Detail Table -->
+<p class="section-title">Page Details & Purpose</p>
+<table class="page-table">
+  <thead>
+    <tr>
+      <th>Page</th>
+      <th>Primary Goal</th>
+      <th>Key Content Sections</th>
+      <th>Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Home</td>
+      <td>First impression — communicate trust, clarity and the pentagon planning framework</td>
+      <td>Hero with bold headline, five-point services overview (pentagon motif), brief values statement, social proof (years of experience, client satisfaction), CTA to Services and Contact</td>
+      <td><span class="tag tag-primary">Landing</span><span class="tag tag-warm">CTA</span></td>
+    </tr>
+    <tr>
+      <td>About Us</td>
+      <td>Build credibility and a human connection with prospective clients</td>
+      <td>Firm founding story, adviser profiles with qualifications, FCA authorisation and regulatory credentials, firm values aligned to client-first philosophy</td>
+      <td><span class="tag tag-light">Trust</span><span class="tag tag-light">Credentials</span></td>
+    </tr>
+    <tr>
+      <td>Services</td>
+      <td>Clearly explain the five service pillars and drive enquiries</td>
+      <td>IHT Planning (estate & legacy structuring), Investment Management (portfolio strategy), Retirement Planning (lifestyle & income goals), Pension Management (consolidation, drawdown, annuity), Insurance & Protection (life, critical illness, income protection) — each with a dedicated sub-section and "Find out more" CTA</td>
+      <td><span class="tag tag-primary">Core</span><span class="tag tag-warm">5 Pillars</span></td>
+    </tr>
+    <tr>
+      <td>Privacy Policy</td>
+      <td>Legal compliance — GDPR / UK Data Protection Act transparency</td>
+      <td>Data collection & processing, cookies and tracking, lawful basis for processing, client rights (access, erasure, portability), contact details for DPO / complaints</td>
+      <td><span class="tag tag-light">Legal</span><span class="tag tag-light">GDPR</span></td>
+    </tr>
+    <tr>
+      <td>Contact Us</td>
+      <td>Convert visitors into enquiries — low barrier to reach the team</td>
+      <td>Simple enquiry form (name, email, service interest, message), direct phone and email, office address, optional appointment scheduler (e.g. Calendly embed)</td>
+      <td><span class="tag tag-primary">Conversion</span><span class="tag tag-warm">CTA</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="divider">
+
+<!-- Colour & Typography -->
+<p class="section-title">Brand Palette</p>
+<div class="palette-section">
+  <div class="swatch">
+    <div class="swatch-box" style="background:#1a2340;"></div>
+    <div class="swatch-info"><span class="swatch-name">Deep Navy</span><span class="swatch-hex">#1A2340 — Primary / Headers / Nav</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#f5f0eb;border-color:#ccc;"></div>
+    <div class="swatch-info"><span class="swatch-name">Warm Cream</span><span class="swatch-hex">#F5F0EB — Page Background</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#b08d72;"></div>
+    <div class="swatch-info"><span class="swatch-name">Bronze Warm</span><span class="swatch-hex">#B08D72 — Accent / Logo / CTA</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#ffffff;border-color:#ccc;"></div>
+    <div class="swatch-info"><span class="swatch-name">White</span><span class="swatch-hex">#FFFFFF — Cards / Panels</span></div>
+  </div>
+  <div class="swatch">
+    <div class="swatch-box" style="background:#d6cdc5;"></div>
+    <div class="swatch-info"><span class="swatch-name">Pale Border</span><span class="swatch-hex">#D6CDC5 — Dividers / Borders</span></div>
+  </div>
+</div>
+
+<!-- Style Cards -->
+<p class="section-title">Typography & Component Style</p>
+<div class="style-grid">
+  <div class="style-card">
+    <span class="card-label">Display / Headlines</span>
+    <div class="card-headline">Wealth Planning<br>for Every Stage<br>of Life</div>
+    <p class="card-body">Cormorant Garamond Light 300. Elegant serif for all hero text, section headings and pull quotes. Conveys heritage and trust.</p>
+  </div>
+  <div class="style-card">
+    <span class="card-label">Body & Navigation</span>
+    <div style="font-size:14px;color:var(--navy);font-weight:400;line-height:1.8;margin-bottom:10px;">Jost Regular · Jost Light<br><span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--warm);">Jost 500 for labels & nav</span></div>
+    <p class="card-body">Clean geometric sans-serif. Used for all body copy, navigation items, captions and UI labels. Pairs with Cormorant for a refined contrast.</p>
+  </div>
+  <div class="style-card">
+    <span class="card-label">Buttons & CTAs</span>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:10px;">
+      <button style="background:var(--navy);color:var(--cream);border:none;padding:11px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:default;font-weight:500;">Get in Touch →</button>
+      <button style="background:transparent;color:var(--navy);border:1.5px solid var(--navy);padding:10px 22px;font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;cursor:default;font-weight:500;">Learn More →</button>
+    </div>
+    <p class="card-body">Primary: solid navy. Secondary: outlined navy. Accent warm bronze used for active states and logo.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>Pentagon Wealth · Internal Brand & Web Sitemap · April 2026</p>
+  <p>For design & development reference only · Not for distribution</p>
+</div>
+
+</body>
+</html>

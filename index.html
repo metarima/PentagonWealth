@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pentagon Wealth | Wealth Planning for Every Stage of Life</title>
+  <meta name="description" content="Pentagon Wealth provides tailored advice in inheritance tax planning, investments, retirement, pension management, and insurance protection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2340;
+      --navy-soft: #243057;
+      --cream: #f5f0eb;
+      --warm: #b08d72;
+      --warm-soft: #c9a98a;
+      --line: #d6cdc5;
+      --white: #ffffff;
+      --text: #364152;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Jost", sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), 92vw);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245, 240, 235, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(26, 35, 64, 0.08);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+    }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      color: var(--navy);
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.56rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-top: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      color: var(--navy);
+      font-size: 0.74rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.76rem 1.2rem;
+      border-radius: 2px;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 0.68rem;
+      font-weight: 500;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: var(--cream);
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-soft);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(26, 35, 64, 0.06);
+    }
+
+    .hero {
+      padding: 7rem 0 5.8rem;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(176, 141, 114, 0.16), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(26, 35, 64, 0.12), transparent 45%);
+    }
+
+    .hero-wrap {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.66rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--warm);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: clamp(2.3rem, 7vw, 4rem);
+      line-height: 1.05;
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      max-width: 58ch;
+      font-size: 1.02rem;
+      margin-bottom: 1.9rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.8rem;
+      position: relative;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: -1px;
+      width: 62%;
+      height: 4px;
+      background: var(--warm);
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      background: var(--cream);
+      padding: 0.95rem;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-head {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: clamp(1.9rem, 5vw, 2.7rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .pillars {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(170px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 1.1rem;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--warm);
+    }
+
+    .card .icon {
+      color: var(--warm);
+      font-size: 1.25rem;
+      line-height: 1;
+      margin-bottom: 0.7rem;
+    }
+
+    .card h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--navy);
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.3rem;
+    }
+
+    .about-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 1.4rem;
+    }
+
+    .about-panel h3 {
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 500;
+    }
+
+    .about-panel ul {
+      list-style-position: inside;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .insights {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .insight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .insight {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 1.2rem;
+    }
+
+    .insight .type {
+      display: inline-block;
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 0.7rem;
+    }
+
+    .insight h3 {
+      color: var(--navy);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+
+    .cta {
+      padding: 5.2rem 0;
+      background: var(--navy);
+      color: var(--cream);
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .cta h2 {
+      color: var(--cream);
+      margin-bottom: 0.45rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+    }
+
+    .cta .btn-primary {
+      background: var(--warm);
+      border-color: var(--warm);
+      color: var(--white);
+    }
+
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--line);
+      padding: 2rem 0;
+    }
+
+    .foot-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: #5f6573;
+    }
+
+    @media (max-width: 1030px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero-wrap,
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+      }
+
+      .insight-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding-top: 5.5rem;
+      }
+
+      .card-grid,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="Pentagon Wealth homepage">
+        <svg class="brand-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1.4" stroke-linejoin="round"/>
+          <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="1.1" stroke-linejoin="round" transform="rotate(12 26 26)" opacity="0.6"/>
+          <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="#b08d72" stroke-width="0.9" stroke-linejoin="round" transform="rotate(24 26 26)" opacity="0.35"/>
+        </svg>
+        <span>
+          <span class="brand-name">Pentagon Wealth</span>
+          <span class="brand-sub">Wealth planning &amp; advisory services</span>
+        </span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#insights">Insights</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Get in Touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <p class="eyebrow">Trusted financial guidance</p>
+          <h1>Wealth Planning for Every Stage of Life</h1>
+          <p>
+            Pentagon Wealth delivers practical, personal advice designed around your goals. From estate and inheritance planning to retirement income and long-term portfolio management, we help you make confident financial decisions.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#services">Explore Services</a>
+            <a class="btn btn-secondary" href="#about">Meet the Team</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Why clients choose Pentagon Wealth">
+          <p class="eyebrow">Client confidence</p>
+          <p>Advice built around clarity, continuity, and measurable progress over time.</p>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>20+ Years</strong>
+              <span>Combined advisory experience</span>
+            </div>
+            <div class="metric">
+              <strong>5 Core Pillars</strong>
+              <span>Fully integrated planning model</span>
+            </div>
+            <div class="metric">
+              <strong>Client First</strong>
+              <span>Independent and transparent</span>
+            </div>
+            <div class="metric">
+              <strong>Personal</strong>
+              <span>Tailored plans for each family</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="pillars">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2>Five Planning Pillars</h2>
+          </div>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <p class="icon">⬟</p>
+            <h3>IHT Planning</h3>
+            <p>Protect more of your estate with proactive inheritance tax and legacy planning strategies.</p>
+          </article>
+          <article class="card">
+            <p class="icon">⬠</p>
+            <h3>Investments</h3>
+            <p>Build resilient portfolios aligned to your goals, timeline, and attitude to risk.</p>
+          </article>
+          <article class="card">
+            <p class="icon">◈</p>
+            <h3>Retirement</h3>
+            <p>Shape your retirement with a clear income roadmap and long-term sustainability planning.</p>
+          </article>
+          <article class="card">
+            <p class="icon">◇</p>
+            <h3>Pension Management</h3>
+            <p>Consolidate pensions, review options, and optimize your drawdown approach.</p>
+          </article>
+          <article class="card">
+            <p class="icon">◎</p>
+            <h3>Insurance &amp; Protection</h3>
+            <p>Safeguard your family and business with suitable life and income protection cover.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">About us</p>
+            <h2>Built on Trust and Long-Term Relationships</h2>
+          </div>
+        </div>
+        <div class="about-wrap">
+          <div class="about-panel">
+            <h3>Our Approach</h3>
+            <p>
+              We combine technical planning expertise with straightforward communication, helping clients feel informed at every step. Advice is tailored, transparent, and rooted in your personal objectives.
+            </p>
+          </div>
+          <div class="about-panel">
+            <h3>What You Can Expect</h3>
+            <ul>
+              <li>Clear recommendations aligned to your priorities</li>
+              <li>Regular reviews to keep plans relevant</li>
+              <li>Structured support across life transitions</li>
+              <li>Professional standards and regulatory discipline</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="insights">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Insights</p>
+            <h2>Latest Thinking from the Team</h2>
+          </div>
+        </div>
+        <div class="insight-grid">
+          <article class="insight">
+            <span class="type">Guide</span>
+            <h3>Is Your Estate Plan Still Fit for Purpose?</h3>
+            <p>A practical checklist to review your current structure and protect future generations.</p>
+          </article>
+          <article class="insight">
+            <span class="type">Planning Note</span>
+            <h3>Balancing Growth and Stability in Volatile Markets</h3>
+            <p>How diversified asset allocations can support both confidence and long-term returns.</p>
+          </article>
+          <article class="insight">
+            <span class="type">Retirement</span>
+            <h3>Three Decisions That Shape Retirement Income</h3>
+            <p>From pension drawdown timing to tax strategy, small decisions can have major impact.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container cta-inner">
+        <div>
+          <p class="eyebrow">Start the conversation</p>
+          <h2>Ready to Build Your Financial Plan?</h2>
+          <p>Book a call to discuss your goals and discover how Pentagon Wealth can support your next stage.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:hello@pentagonwealth.co.uk">Book a Call</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-wrap">
+      <p>Pentagon Wealth | Independent financial planning and advisory services.</p>
+      <p>Copyright 2026 Pentagon Wealth. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
