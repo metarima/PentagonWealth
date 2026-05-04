@@ -1,0 +1,20 @@
+{
+  "name": "pentagon-wealth-site",
+  "version": "1.0.0",
+  "description": "Pentagon Wealth Node.js starter site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "spa"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

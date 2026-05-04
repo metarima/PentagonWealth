@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pentagon Wealth | Wealth Planning for Every Stage of Life</title>
+  <meta name="description" content="Pentagon Wealth provides tailored advice in inheritance tax planning, investments, retirement, pension management, and insurance protection.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#app">Skip to main content</a>
+
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand" data-link aria-label="Pentagon Wealth homepage">
+        <svg class="brand-mark" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linejoin="round"/>
+          <polygon points="26,4 46,18 38,42 14,42 6,18" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linejoin="round" transform="rotate(12 26 26)" opacity="0.55"/>
+        </svg>
+        <span class="brand-text">Pentagon Wealth</span>
+      </a>
+
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+        <span class="menu-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="/" data-link>Home</a></li>
+          <li><a href="/about" data-link>About Us</a></li>
+          <li><a href="/services" data-link>Services</a></li>
+          <li><a href="/insights" data-link>Insights</a></li>
+          <li><a href="/contact" data-link>Contact Us</a></li>
+        </ul>
+        <a class="btn btn-nav-cta" href="/contact" data-link>Get in Touch</a>
+      </nav>
+    </div>
+    <div class="nav-scrim" id="nav-scrim" hidden></div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo" aria-hidden="true">⬟</span>
+        <div>
+          <p class="footer-name">Pentagon Wealth</p>
+          <p class="footer-tag">Independent financial planning and advisory services.</p>
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/" data-link>Home</a>
+        <a href="/about" data-link>About Us</a>
+        <a href="/services" data-link>Services</a>
+        <a href="/insights" data-link>Insights</a>
+        <a href="/contact" data-link>Contact Us</a>
+        <a href="/privacy-policy" data-link>Privacy Policy</a>
+      </nav>
+      <div class="footer-cta">
+        <p class="footer-eyebrow">Start a conversation</p>
+        <a class="btn btn-footer" href="/contact" data-link>Get in Touch</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="footer-year"></span> Pentagon Wealth. All rights reserved.</p>
+      <p><a href="/privacy-policy" data-link>Privacy Policy</a> · <a href="/privacy-policy#cookies" data-link>Cookie Policy</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+  <script src="/app.js"></script>
+</body>
+</html>
